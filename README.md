@@ -1,4 +1,6 @@
 # Redux Fundamentals Tutorial Example
+efh loh
+https://redux.js.org/tutorials/fundamentals/part-4-store
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
