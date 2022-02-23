@@ -11,7 +11,9 @@ const unsubscribe = store.subscribe(()=>{
   console.log('State after dispatch:',store.getState())
 })
 
+console.log('dispatching action')
 store.dispatch({type: 'todos/todoAdded', payload:'Learn about actions'})
+console.log('dispatch complete')
 store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about reducers' })
 store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about stores' })
 store.dispatch({ type: 'todos/todoToggled', payload: 0 })
