@@ -10,15 +10,13 @@ export const todoAdded = (todo) => {
 }
 
 // Thunk function
-export const fetchTodos = () => {
-  return async function fetchTodosThunk(dispatch, getState) {
-    const response = await client.get('/fakeApi/todos')
-    const stateBefore = getState()
-    console.log('Todos before dispatch: ', stateBefore.todos.length)
-    dispatch(todosLoaded(response.todos))
-    const stateAfter = getState()
-    console.log('Todos after dispatch: ', stateAfter.todos.length)
-  }
+export const fetchTodos = () => async (dispatch,getState) => {
+  const response = await client.get('/fakeApi/todos')
+  const stateBefore = getState()
+  console.log('Todos before dispatch: ', stateBefore.todos.length)
+  dispatch(todosLoaded(response.todos))
+  const stateAfter = getState()
+  console.log('Todos after dispatch: ', stateAfter.todos.length)
 }
 
 // Write a synchronous outer function that receives the `text` parameter:
