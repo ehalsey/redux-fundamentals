@@ -86,7 +86,7 @@ const Footer = () => {
  
   //dispatch({ type: 'todos/colorSelected', payload: { color: e.target.value, todoId: todo.id } })
   const onColorChange = (color, changeType) => {
-    dispatch({ type: 'filters/colorFilterChanged', payload: { color: color, changeType: changeType } })
+    dispatch(colorFilterChanged(color, changeType))
     console.log('Color change: ', { color, changeType })
   }
   const onStatusChange = (status) => {
@@ -110,3 +110,7 @@ const Footer = () => {
 }
 
 export default Footer
+export function colorFilterChanged(color, changeType) {
+  return { type: 'filters/colorFilterChanged', payload: { color: color, changeType: changeType } }
+}
+
