@@ -83,8 +83,7 @@ const Footer = () => {
   const todosRemainingCount = useSelector(state => remainingTodosSelector(state)).length
 
   const { status, colors } = useSelector(state => state.filters)
-  const todosRemaining = useSelector(state => remainingTodosSelector(state))
-
+ 
   //dispatch({ type: 'todos/colorSelected', payload: { color: e.target.value, todoId: todo.id } })
   const onColorChange = (color, changeType) => {
     dispatch({ type: 'filters/colorFilterChanged', payload: { color: color, changeType: changeType } })
