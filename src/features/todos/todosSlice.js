@@ -10,13 +10,15 @@ export const todoAdded = (todo) => {
 }
 
 // Thunk function
-export async function fetchTodos(dispatch, getState) {
-  const response = await client.get('/fakeApi/todos')
-  const stateBefore = getState()
-  console.log('Todos before dispatch: ',stateBefore.todos.length)
-  dispatch(todosLoaded(response.todos))
-  const stateAfter = getState()
-  console.log('Todos after dispatch: ',stateAfter.todos.length)
+export const fetchTodos = () => {
+  return async function fetchTodosThunk(dispatch, getState) {
+    const response = await client.get('/fakeApi/todos')
+    const stateBefore = getState()
+    console.log('Todos before dispatch: ', stateBefore.todos.length)
+    dispatch(todosLoaded(response.todos))
+    const stateAfter = getState()
+    console.log('Todos after dispatch: ', stateAfter.todos.length)
+  }
 }
 
 // Write a synchronous outer function that receives the `text` parameter:
@@ -38,7 +40,7 @@ export default function todosReducer(state = initialState, action) {
     }
     case 'todos/todoAdded': {
       // Can return just the new todos array - no extra object around it
-      return [...state,action.payload]
+      return [...state, action.payload]
     }
     case 'todos/todoToggled': {
       return state.map((todo) => {
