@@ -9,6 +9,10 @@ const initialState = {
   colors: [],
 }
 
+export function colorFilterChanged(color, changeType) {
+  return { type: 'filters/colorFilterChanged', payload: { color: color, changeType: changeType } }
+}
+
 export default function filtersReducer(state = initialState, action) {
   switch (action.type) {
     case 'filters/statusFilterChanged': {
