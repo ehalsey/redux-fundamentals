@@ -1,6 +1,6 @@
 # Redux Fundamentals Tutorial Example
 efh loh
-https://redux.js.org/tutorials/fundamentals/part-6-async-logic#fetching-todos-from-a-server
+https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
