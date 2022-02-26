@@ -1,6 +1,6 @@
 # Redux Fundamentals Tutorial Example
 efh loh
-https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns#memoized-selectors
+https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns#flux-standard-actions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
