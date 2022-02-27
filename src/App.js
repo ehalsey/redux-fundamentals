@@ -1,30 +1,15 @@
 import React from 'react'
-
+import Main from './features/main/Main'
 import Header from './features/header/Header'
 import TodoList from './features/todos/TodoList'
 import Footer from './features/footer/Footer'
 import User from './features/user/User'
+import Callback from './features/callback/Callback'
+import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <nav>
-        <section>
-          <h1>Redux Fundamentals Example</h1>
-        </section>
-      </nav>
-      <main>
-        <section className="medium-container">
-          <h2>Todos</h2>
-          <div className="todoapp">
-            <User />
-            <Header />
-            <TodoList />
-            <Footer />
-          </div>
-        </section>
-      </main>
-    </div>
+    <Main></Main>
   )
 }
 
