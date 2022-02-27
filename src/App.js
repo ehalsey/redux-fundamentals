@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './features/header/Header'
 import TodoList from './features/todos/TodoList'
 import Footer from './features/footer/Footer'
+import User from './features/user/User'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <section className="medium-container">
           <h2>Todos</h2>
           <div className="todoapp">
+            <User />
             <Header />
             <TodoList />
             <Footer />
