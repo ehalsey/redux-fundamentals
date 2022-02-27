@@ -1,16 +1,21 @@
 import React from 'react'
 import Main from './features/main/Main'
-import Header from './features/header/Header'
-import TodoList from './features/todos/TodoList'
-import Footer from './features/footer/Footer'
-import User from './features/user/User'
-import Callback from './features/callback/Callback'
-import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
+import { Amplify } from 'aws-amplify';
+
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+function App({ signOut, user }) {
   return (
-    <Main></Main>
+    <>
+      <h1>Hello {user.username}</h1>
+      <button onClick={signOut}>Sign out</button>
+    </>
   )
 }
 
-export default App
+export default withAuthenticator(App)
